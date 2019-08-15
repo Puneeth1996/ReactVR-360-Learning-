@@ -1,0 +1,40 @@
+import React from 'react';
+import {
+  AppRegistry,
+  asset,
+  Pano,
+  Text,
+  View,
+  StyleSheet
+} from 'react-vr';
+
+const mystyle = StyleSheet.create({
+  style1: {
+    backgroundColor: 'red',
+    transform: [{translate: [-70, 20, -200]}],
+    //fontSize: 50
+  },
+  style2: {
+    color: 'white',
+    fontSize: 20,
+  },
+});
+
+const combinedStyle = StyleSheet.flatten([mystyle.style1, mystyle.style2]);
+
+export default class StylingExample extends React.Component {
+  render() {
+    return (
+      <View>
+
+        <Pano source={asset('chess-world.jpg')}/>
+        <Text style={combinedStyle}>
+          This is a text
+        </Text>
+
+      </View>
+    );
+  }
+};
+
+AppRegistry.registerComponent('WelcomeToVR', () => StylingExample);

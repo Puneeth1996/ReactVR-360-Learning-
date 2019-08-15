@@ -1,0 +1,45 @@
+import React from 'react';
+import {
+  AppRegistry,
+  asset,
+  Pano,
+  Text,
+  View,
+  StyleSheet
+} from 'react-vr';
+
+const mystyle = StyleSheet.create({
+  text: {
+    fontSize: 20,
+    color: 'white',
+    backgroundColor: 'red',
+    transform: [{translate: [-70, 20, -200]}],
+  },
+});
+
+export default class StylingExample extends React.Component {
+  render() {
+    return (
+      <View>
+
+        <Pano source={asset('chess-world.jpg')}/>
+        <Text style={
+          {
+            fontSize: 20,
+            color: 'white',
+            backgroundColor: 'red',
+            transform: [{translate: [-70, 20, -200]}],
+          }
+        }>
+          This is a text
+        </Text>
+        <Text style={mystyle.text}>
+          This is another text
+        </Text>
+
+      </View>
+    );
+  }
+};
+
+AppRegistry.registerComponent('WelcomeToVR', () => StylingExample);
