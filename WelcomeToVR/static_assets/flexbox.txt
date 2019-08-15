@@ -1,0 +1,61 @@
+import React from 'react';
+import {
+  AppRegistry,
+  asset,
+  Pano,
+  Text,
+  View,
+} from 'react-vr';
+
+export default class FlexboxExample extends React.Component {
+  render() {
+    return (
+      <View>
+        <Pano source={asset('chess-world.jpg')}/>
+        <View
+          style={
+            {
+              backgroundColor: '#fff',
+              width: 2.5,
+              height: 2.5,
+              transform: [{translate: [-1, 1, -3]}],
+
+              flexDirection: 'coloumn',
+              //  flexDirection: 'row',
+              // coloumn
+
+              //  justifyContent: 'flex-start',
+              //  justifyContent: 'flex-end',
+              //  justifyContent:'center',
+              //  justifyContent: 'space-around',
+              //  justifyContent:'space-between',
+              //  justifyContent:'space-evenly',  doubt//
+              // flex-start
+
+              //  alignItems: 'flex-start',
+              //  alignItems: 'flex-end ',
+              //  alignItems: 'center',
+              //  alignItems: 'stretch',
+              // stretch
+
+            }
+          }
+        >
+
+          <Text style={{color: '#000', backgroundColor: 'green', height: 0.2,}}>*1*</Text>
+
+          <Text style={{color: '#000', backgroundColor: 'red', height: 0.2,}}>*2*</Text>
+
+          <Text style={{color: '#000', backgroundColor: 'yellow', height: 0.2,}}>*3*</Text>
+
+          <Text style={{color: '#000', backgroundColor: 'blue', height: 0.2,}}>*4*</Text>
+
+          <Text style={{color: '#000', backgroundColor: 'turquoise', height: 0.2,}}>*5*</Text>
+
+        </View>
+      </View>
+    );
+  }
+};
+
+AppRegistry.registerComponent('WelcomeToVR', () => FlexboxExample);
