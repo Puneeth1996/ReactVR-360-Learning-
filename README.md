@@ -1,6 +1,12 @@
 # ReactVR-360-Learning-
+
+For creating the boiler plate files for React VR 
+
+
 This is are some simple practices exercise on react vr and 360 
 
+npm installl -g react-vr-cli
+react-vr init WelcomeToVR
 
 Aug 15th 2019 
 
