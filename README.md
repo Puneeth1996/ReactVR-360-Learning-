@@ -15,4 +15,14 @@ Added txt files on the code for
 2 using cube in react vr
 
 
-Added 1 How to use sphere and cylinder in react vr more the number of width and height segements, than more smooth is the surface.
+Added 1 How to use sphere and cylinder in react vr more the number of width and height segements, than more smooth is the surface./
+
+
+Also have added the git ignore file to make the code base for the repository lighter
+
+React 360 
+Cmds for setting up react 360 boiler plate code
+
+npm install -g react-360-cli
+react-360 init WelcomeTo360
+
