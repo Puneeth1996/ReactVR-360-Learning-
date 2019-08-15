@@ -1,0 +1,67 @@
+import React from 'react';
+import {
+  AppRegistry,
+  asset,
+  Pano,
+  Text,
+  View,
+  VrButton
+} from 'react-vr';
+
+export default class cursorSystem extends React.Component {
+
+  constructor()
+  {
+    super();
+    this.state = {buttonText: "Default Button"};
+  }
+
+  triggerClick()
+  {
+    this.setState({buttonText: "Mouse Clicked"});
+  }
+
+  triggerLongClick()
+  {
+    this.setState({buttonText: "Mouse Long Clicked"});
+  }
+
+  triggerEnter()
+  {
+    this.setState({buttonText: "Mouse Entered"});
+  }
+
+  triggerExit()
+  {
+    this.setState({buttonText: "Mouse Exited"});
+  }
+
+  render() {
+    return (
+      <View>
+        <Pano source = {asset('chess-world.jpg')}/>
+
+        <VrButton
+          onEnter = {this.triggerEnter.bind(this)}
+          onExit = {this.triggerExit.bind(this)}
+          onClick = {this.triggerClick.bind(this)}
+          onLongClick = {this.triggerLongClick.bind(this)}
+        >
+
+        <Text style = {{
+          fontSize: 0.3,
+          textAlign: 'center',
+          backgroundColor: 'steelblue',
+          transform: [
+            {translate: [-1, 0, -3]}
+          ]
+        }}
+        >{this.state.buttonText}</Text>
+
+        </VrButton>
+      </View>
+    );
+  }
+};
+
+AppRegistry.registerComponent('WelcomeToVR', () => cursorSystem);
